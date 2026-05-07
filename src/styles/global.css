@@ -1,0 +1,296 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background:
+    radial-gradient(circle at top, #1e293b, #020617);
+
+  color: white;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+/* ===== APP ===== */
+.app {
+  padding: 20px;
+}
+
+/* ===== HEADER ===== */
+header {
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+/* ===== BUSCA ===== */
+.busca {
+  width: 100%;
+
+  padding: 15px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(255,255,255,0.05);
+
+  color: white;
+
+  backdrop-filter: blur(18px);
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.busca:focus {
+  border: 1px solid #3b82f6;
+}
+
+.busca::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ===== DOCUMENTOS ===== */
+.documentos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ===== CARD ===== */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px;
+
+  border-radius: 22px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(18px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.45);
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+/* ===== ÍCONE ===== */
+.card-icon {
+  font-size: 34px;
+}
+
+/* ===== INFO ===== */
+.card-info h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.card-info p {
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* ===== SPLASH ===== */
+#splash {
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top, #0f172a, #020617);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+
+  transition: 0.6s ease;
+}
+
+/* ===== LOGO ===== */
+.splash-logo {
+  width: 110px;
+  height: 110px;
+
+  margin-bottom: 24px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(135deg, #2563eb, #1d4ed8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 46px;
+
+  box-shadow:
+    0 15px 40px rgba(37,99,235,0.45);
+
+  animation: pulse 2s infinite;
+}
+
+/* ===== TÍTULO ===== */
+#splash h1 {
+  font-size: 42px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* ===== SUBTÍTULO ===== */
+.assinatura {
+  opacity: 0.65;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes pulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+/* ===== VIEWER ===== */
+.viewer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 16px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(18px);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.08);
+}
+
+/* ESQUERDA */
+.viewer-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* DIREITA */
+.viewer-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* TÍTULO */
+.viewer-header h2 {
+  font-size: 15px;
+  max-width: 180px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* BOTÕES */
+/* BOTÕES */
+.voltar,
+.viewer-btn {
+  min-width: 42px;
+  height: 42px;
+
+  padding: 0 14px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+/* HOVER */
+.voltar:hover,
+.viewer-btn:hover {
+  background:
+    rgba(255,255,255,0.14);
+}
+
+/* CLICK */
+.voltar:active,
+.viewer-btn:active {
+  transform: scale(0.95);
+}
+
+/* PDF */
+.pdf-frame {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: white;
+}
