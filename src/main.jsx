@@ -1,34 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
 
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
+import './styles/global.css'
 
-import App from "./App";
-import PDFViewer from "./pages/PDFViewer";
+import { registerSW } from 'virtual:pwa-register'
 
-import "./styles/global.css";
+registerSW({
+  immediate: true
+})
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
-    <BrowserRouter>
-
-      <Routes>
-
-        <Route path="/" element={<App />} />
-
-        <Route
-          path="/viewer"
-          element={<PDFViewer />}
-        />
-
-      </Routes>
-
-    </BrowserRouter>
-
-  </React.StrictMode>
-);
+    <App />
+  </React.StrictMode>,
+)
