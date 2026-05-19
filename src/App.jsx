@@ -96,6 +96,37 @@ function App() {
 
   }, []);
 
+  // ===== ATUALIZAR APP =====
+  const atualizarApp = async () => {
+
+    // remove caches
+    const cacheNames = await caches.keys();
+
+    await Promise.all(
+      cacheNames.map((cache) =>
+        caches.delete(cache)
+      )
+    );
+
+    // remove service workers
+    const registrations =
+      await navigator.serviceWorker.getRegistrations();
+
+    for (let registration of registrations) {
+
+      await registration.unregister();
+
+    }
+
+    // limpa storage
+    localStorage.clear();
+    sessionStorage.clear();
+
+    // recarrega app
+    window.location.reload(true);
+
+  };
+
   return (
     <div className="app">
 
@@ -117,7 +148,18 @@ function App() {
       {/* HEADER */}
       <header>
 
-        <h1>CPP Digital</h1>
+        <div className="header-top">
+
+          <h1>CPP Digital</h1>
+
+          <button
+            className="update-btn"
+            onClick={atualizarApp}
+          >
+            Atualizar documentos
+          </button>
+
+        </div>
 
         <input
           type="text"
